@@ -17,10 +17,48 @@ typedef vector<i16> vi16;
 typedef vector<i32> vi32;
 typedef vector<i64> vi64;
 
+bool is_dyck(string s);
+
 int main(){
     cin.tie(nullptr);
 
-    
+    i16 N;
+    cin >> N;
+
+    for(int i = 0; i < (1 << N); i++){
+        bitset<20> bs(i);
+        string s(N, ' ');
+
+        for(int j = 0; j < N; j++){
+            if(bs.test(N - 1 - j)) {
+                s[j] = ')';
+            } else{
+                s[j] = '(';
+            }
+        }
+
+        if(is_dyck(s)){
+            cout << s << endl;
+        }
+    }
 
     return(0);
+}
+
+bool is_dyck(string s){
+    stack<char> st;
+
+    for(char c : s){
+        if(c == '('){
+            st.push(c);
+        } else{
+            if(st.empty()){
+                return false;
+            } else{
+                st.pop();
+            }
+        }
+    }
+
+    return st.empty();
 }

@@ -20,7 +20,26 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
+
+    i32 A[N], B[N];
+    rep(i, 0, N - 1){
+        cin >> A[i];
+    }
+    rep(i, 0, N - 1){
+        cin >> B[i];
+    }
+
+    sort(A, A + N);
+    sort(B, B + N);
+
+    i64 ans = 0;
+    rep(i, 0, N - 1){
+        ans += abs(A[i] - B[i]);
+    }
+
+    cout << ans << endl;
 
     return(0);
 }

@@ -20,7 +20,19 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i64 a, b, c;
+    cin >> a >> b >> c;
+
+    i64 d = 1;
+    rep(i, 1, b){
+        d *= c;
+    }
+
+    if(a < d){
+        cout << "Yes" << endl;
+    }else{
+        cout << "No" << endl;
+    }
 
     return(0);
 }

@@ -20,7 +20,27 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
 
+    i64 A, B, C;
+    cin >> A >> B >> C;
+
+    i32 ans = 10000;
+    rep(i, 0, 10000){
+        rep(j, 0, 10000){
+            i64 sum = A * i + B * j;
+            if(N < sum){
+                break;
+            }
+            
+            if((N - sum) % C == 0){
+                i32 cnt = i + j + (N - sum) / C;
+                ans = min(ans, cnt);
+            }
+        }
+    }
+
+    cout << ans << endl;
     return(0);
 }
