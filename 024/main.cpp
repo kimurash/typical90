@@ -20,7 +20,36 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N, K;
+    cin >> N >> K;
+
+    i32 A[N + 1], B[N + 1];
+    rep(i, 1, N){
+        cin >> A[i];
+    }
+    rep(i, 1, N){
+        cin >> B[i];
+    }
+
+    i64 diff = 0;
+    rep(i, 1, N){
+        diff += abs(A[i] - B[i]);
+    }
+
+    if(diff == K){
+        cout << "Yes" << endl;
+    } else{
+        if(diff < K){
+            i64 rem = K - diff;
+            if(rem % 2 == 0){
+                cout << "Yes" << endl;
+            } else{
+                cout << "No" << endl;
+            }
+        } else{
+            cout << "No" << endl;
+        }
+    }
 
     return(0);
 }

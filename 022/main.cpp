@@ -20,7 +20,13 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
+    i64 A, B, C;
+    cin >> A >> B >> C;
+
+    i64 gcd = __gcd(__gcd(A, B), C);
+    i64 ans = A / gcd + B / gcd + C / gcd - 3;
     
+    cout << ans << endl;
 
     return(0);
 }
