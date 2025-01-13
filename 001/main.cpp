@@ -20,7 +20,38 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N, L, K;
+    cin >> N >> L >> K;
 
+    i32 A[N + 2];
+    A[0] = 0;
+    rep(i, 1, N){
+        cin >> A[i];
+    }
+    A[N + 1] = L;
+
+    i32 low = 0;
+    i32 high = L;
+    while(low + 1 < high){
+        i32 mid = (low + high) / 2;
+
+        i32 cnt = 0;
+        i32 len = 0;
+        rep(i, 1, N + 1){
+            len += A[i] - A[i - 1];
+            if(mid <= len){
+                len = 0;
+                cnt++;
+            }
+        }
+
+        if(K + 1 <= cnt){
+            low = mid;
+        } else{
+            high = mid;
+        }
+    }
+
+    cout << low << endl;
     return(0);
 }
