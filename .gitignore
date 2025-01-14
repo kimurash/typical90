@@ -1,4 +1,5 @@
 *.in
 *.out
+*.txt
 
 contest.acc.json

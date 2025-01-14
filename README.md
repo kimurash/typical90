@@ -6,3 +6,4 @@
 - [ ] 012 - Red Painting (★4)
 - [ ] 016 - Minimum Coins (★3)
 - [ ] 026 - Independent Set on a Tree (★4)
+- [ ] 028 - Cluttered Paper (★4)

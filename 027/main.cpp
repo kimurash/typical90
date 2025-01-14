@@ -20,7 +20,19 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
+
+    set<string> username;
+
+    string S;
+    rep(i, 1, N){
+        cin >> S;
+        if(username.find(S) == username.end()){
+            cout << i << endl;
+            username.insert(S);
+        }
+    }
 
     return(0);
 }
