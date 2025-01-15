@@ -20,7 +20,38 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N, K;
+    cin >> N >> K;
+
+    i32 a[N + 1];
+    rep(i, 1, N){
+        cin >> a[i];
+    }
+
+    size_t ans = 1;
+    queue<i32> q;
+    map<i32, i32> mp;
+
+    rep(i, 1, N){
+        if(mp.count(a[i]) == 0){
+            while(K <= mp.size()){
+                i32 b = q.front();
+                q.pop();
+
+                mp[b]--;
+                if(mp[b] == 0){
+                    mp.erase(b);
+                }
+            }
+        }
+
+        q.push(a[i]);
+        mp[a[i]]++;
+
+        ans = max(ans, q.size());
+    }
+
+    cout << ans << endl;
 
     return(0);
 }
