@@ -17,10 +17,22 @@ typedef vector<i16> vi16;
 typedef vector<i32> vi32;
 typedef vector<i64> vi64;
 
+// #defineではWA
+const i64 INF = 1e18;
+
 int main(){
     cin.tie(nullptr);
 
+    i64 A, B;
+    cin >> A >> B;
+
+    i64 g = gcd(A, B);
     
+    if(A / g > INF / B){
+        cout << "Large" << endl;
+    }else{
+        cout << (A / g) * B << endl;
+    }
 
     return(0);
 }

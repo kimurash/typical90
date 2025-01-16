@@ -7,3 +7,4 @@
 - [ ] 016 - Minimum Coins (★3)
 - [ ] 026 - Independent Set on a Tree (★4)
 - [ ] 028 - Cluttered Paper (★4)
+- [ ] 042 - Multiple of 9 (★3)
