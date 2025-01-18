@@ -8,3 +8,4 @@
 - [ ] 026 - Independent Set on a Tree (★4)
 - [ ] 028 - Cluttered Paper (★4)
 - [ ] 042 - Multiple of 9 (★3)
+- [ ] 043 - Maze Challenge with Lack of Sleep (★4)
