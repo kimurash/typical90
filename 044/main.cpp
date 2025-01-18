@@ -20,7 +20,32 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N, Q;
+    cin >> N >> Q;
+
+    i32 A[N];
+    rep(i, 0, N - 1){
+        cin >> A[i];
+    }
+
+    i32 T, X, Y;
+    i32 shift = 0;
+    rep(i, 1, Q){
+        cin >> T >> X >> Y;
+        X--; Y--;
+
+        if(T == 1){
+            i32 x = (X - shift + N) % N;
+            i32 y = (Y - shift + N) % N;
+            swap(A[x], A[y]);
+        } else if(T == 2){
+            shift++;
+            shift %= N;
+        } else if(T == 3){
+            i32 x = (X - shift + N) % N;
+            cout << A[x] << endl;
+        }
+    }
 
     return(0);
 }
