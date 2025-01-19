@@ -9,3 +9,5 @@
 - [ ] 028 - Cluttered Paper (★4)
 - [ ] 042 - Multiple of 9 (★3)
 - [ ] 043 - Maze Challenge with Lack of Sleep (★4)
+- [ ] 046 - I Love 46 (★3)
+- [ ] 048 - I will not drop out (★3)

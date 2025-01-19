@@ -20,7 +20,41 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
+
+    i32 n;
+    i32 A[46], B[46], C[46];
+    rep(i, 0, 45){
+        A[i] = 0;
+        B[i] = 0;
+        C[i] = 0;
+    }
+    rep(i, 1, N){
+        cin >> n;
+        A[n % 46]++;
+    }
+    rep(i, 1, N){
+        cin >> n;
+        B[n % 46]++;
+    }
+    rep(i, 1, N){
+        cin >> n;
+        C[n % 46]++;
+    }
+
+    i64 ans = 0;
+    rep(i, 0, 45){
+        rep(j, 0, 45){
+            rep(k, 0, 45){
+                if((i + j + k) % 46 == 0){
+                    ans += 1LL * A[i] * B[j] * C[k];
+                }
+            }
+        }
+    }
+
+    cout << ans << endl;
 
     return(0);
 }
