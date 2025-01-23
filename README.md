@@ -12,3 +12,4 @@
 - [ ] 046 - I Love 46 (★3)
 - [ ] 048 - I will not drop out (★3)
 - [ ] 064 - Uplift (★3)
+- [ ] 069 - Colorful Blocks 2 (★3)
