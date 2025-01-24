@@ -20,7 +20,32 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
+
+    i32 X[N], Y[N];
+    rep(i, 0, N - 1){
+        cin >> X[i] >> Y[i];
+    }
+
+    sort(X, X + N);
+    sort(Y, Y + N);
+
+    i64 fx, fy;
+    if(N % 2 == 0){
+        fx = (X[N / 2 - 1] + X[N / 2]) / 2;
+        fy = (Y[N / 2 - 1] + Y[N / 2]) / 2;
+    } else{
+        fx = X[N / 2];
+        fy = Y[N / 2];
+    }
+
+    i64 ans = 0;
+    rep(i, 0, N - 1){
+        ans += abs(X[i] - fx) + abs(Y[i] - fy);
+    }
+
+    cout << ans << endl;
 
     return(0);
 }
