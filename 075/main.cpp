@@ -20,7 +20,29 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i64 N;
+    cin >> N;
+
+    i32 sum = 0;
+    for(i64 p = 2; p * p <= N; p++){
+        i32 cnt = 0;
+        while(N % p == 0){
+            N /= p;
+            cnt++;
+        }
+        sum += cnt;
+    }
+
+    if(N != 1){
+        sum++;
+    }
+
+    if(sum == 0){
+        cout << 0 << endl;
+    } else{
+        i64 ans = ceil(log2(sum));
+        cout << ans << endl;
+    }
 
     return(0);
 }

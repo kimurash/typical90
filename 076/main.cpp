@@ -20,7 +20,37 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i32 N;
+    cin >> N;
+
+    i64 sum = 0;
+    i32 A[2 * N + 1];
+    rep(i, 1, N){
+        cin >> A[i];
+        A[i + N] = A[i];
+
+        sum += A[i];
+    }
+
+    bool ans = false;
+    i64 part = sum / 10;
+
+    i32 l = 1;
+    i64 len = 0;
+    for(i32 r = 1; r <= 2 * N; r++){
+        len += A[r];
+        if(len == part){
+            ans = true;
+            break;
+        }
+
+        while(part < len){
+            len -= A[l];
+            l++;
+        }
+    }
+
+    cout << (ans ? "Yes" : "No") << endl;
 
     return(0);
 }
