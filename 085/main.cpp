@@ -20,7 +20,42 @@ typedef vector<i64> vi64;
 int main(){
     cin.tie(nullptr);
 
-    
+    i64 K;
+    cin >> K;
+
+    vi64 div;
+    for(i64 i = 1; i * i <= K; i++){
+        if(K % i == 0){
+            div.push_back(i);
+            if(i * i != K){
+                div.push_back(K / i);
+            }
+        }
+    }
+
+    sort(all(div));
+
+    i64 ans = 0;
+    size_t N = div.size();
+    rep(i, 0, N - 1){
+        rep(j, i, N - 1){
+            i64 a = div[i];
+            i64 b = div[j];
+
+            if(a * b == 0){
+                continue;
+            }
+
+            if(K % (a * b) == 0){
+                i64 c = K / (a * b);
+                if(b <= c){
+                    ans++;
+                }
+            }
+        }
+    }
+
+    cout << ans << endl;
 
     return(0);
 }
